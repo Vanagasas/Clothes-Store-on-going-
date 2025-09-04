@@ -1,0 +1,162 @@
+body{
+    font-family: "Tirra", cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+header{
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding-bottom: .5em;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    z-index: 1000;
+}
+.nav-options{
+    padding: 1em;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: .2s;
+}
+.nav-options:hover{
+    color: #111;
+    font-size: 1.3em;
+}
+main{
+    min-height: 80vh;
+    padding: 2em 0;
+    text-align: center;
+}
+.suggested-categories-grid{
+    width: 90%;
+    margin: 2em auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+.suggested-image{
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    height:20em;
+    position:relative;
+}
+.suggested-image-man{
+    background-image: url(https://cdn.shopify.com/s/files/1/0576/1076/4347/products/sainly-men-s-two-piece-suit-32-26-men-party-suit-men-s-clothing-men-black-suit-for-groom-wedding-suit-slim-fit-suit-for-men-30167535484987_1024x1024.jpg?v=1663243923v);
+}
+.suggested-image-woman{
+    background-image: url(https://i.pinimg.com/originals/b9/45/10/b94510ca190c2b9f565e5ddfc8807798.png);
+}
+.suggested-image-kids{
+    background-image: url(https://cdn.shopify.com/s/files/1/0444/9505/files/6-7_Home_Mobile_1500x1500.jpg?v=1686173124);
+}
+.suggested-link{
+    text-decoration: none;
+    color: #333;
+}
+.suggested-border{
+    position: relative;
+    top: 1em;
+    border: 1px solid #333;
+    padding: 3em;
+    margin: 2em;
+    transition: 0.5s;
+}
+.suggested-text{
+    background-color: rgb(30,30,30, 0.8);
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+    transition: .5s;
+    color: #f4f4f4;
+    width: 110%;
+}
+.suggested-image:hover > .suggested-border > .suggested-text{
+    background-color: #333;
+    color: #f4f4f4;    
+}
+footer{
+    text-align: center;
+    padding: 1em 0;
+    background-color: #eee;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-section{
+    flex: 1;
+    padding: 0 1em;
+}
+.footer-section h3{
+    margin-top: 0;
+}
+.footer-section p, .footer-section a{
+    font-size: 0.9em;
+}
+.footer-socials a{
+    margin: 0 0.5em;
+}
+.footer-socials a:hover{
+    color: #555;
+}
+
+
+/* Login */
+
+.login-btn {
+    width: 85%;
+    padding: 0.75em;
+    border: none;
+    border-radius: 5px;
+    background-color: #0275d8;
+    color: #fff;
+    font-size: 1em;
+    transition: .5s;
+}
+.login-btn:hover {
+    background-color: #025aa5;
+}
+.login-question {
+    color: #bbb;
+    font-size: 0.9em;
+    margin-top: 1em;
+    transition: .3s;
+    cursor: pointer;
+}
+.login-question:hover {
+    color: #333;
+}
+.login-container {
+    width: 30%;
+    margin: 5em auto;
+    padding: 2em;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    color: #333;
+    text-align: center;
+}
+.login-input {
+    width: 80%;
+    padding: 0.75em;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 1em;
+}
+.register-form {
+    display: none;
+}
