@@ -16,9 +16,9 @@
 <body>
     <header>
         <div class="section">
-            <a href="man.php" class="nav-options">Men</a>
-            <a href="women.php" class="nav-options">Women</a>
-            <a href="kids.php" class="nav-options">Kids</a>
+            <a href="shop.php?cat=M" class="nav-options">Men</a>
+            <a href="shop.php?cat=F" class="nav-options">Women</a>
+            <a href="shop.php?cat=K" class="nav-options">Kids</a>
         </div>
         <h1><a href="index.php">ⵜⴰⵎⵓⵙⵏⵉ</a></h1>
         <nav>

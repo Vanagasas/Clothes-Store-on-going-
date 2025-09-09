@@ -28,7 +28,7 @@ if (!isset($_SESSION['user'])) {
         <nav>
             <a class="nav-options fa-solid fa-bag-shopping" href="cart.php"></a>
             <a class="nav-options fa-solid fa-heart" href="wishlist.php"></a>
-            <a class="nav-options fa-solid fa-user" href="profile.php"></a>
+            <a class="nav-options fa-solid fa-user active" href="profile.php"></a>
         </nav>
     </header>
     
