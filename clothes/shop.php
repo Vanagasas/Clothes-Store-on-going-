@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once "database.php";
+include_once "shop-form.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,21 +37,6 @@ include_once "database.php";
     </header>
     <div class="shopping-container">
         <?php
-
-    // change this to a function in shop-form.php
-            $products = array();
-            if (isset($_GET['cat'])){
-                $category = $_GET['cat'];
-                $sql = "SELECT * FROM clothes WHERE category = '$category'";
-            }
-            else{
-                $sql = "SELECT * FROM clothes";
-            }
-            $result = mysqli_query($conn, $sql);
-            $resultCheck = mysqli_num_rows($result);
-            for ($i = 0; $i < $resultCheck; $i++){
-                $products[$i] = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            }
             for ($i = 0; $i < $resultCheck; $i++){
                 echo '<div class="product-card">
                         <img class="product-image" src="'.$products[$i]['img_url'].'" alt="Product Image">

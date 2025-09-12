@@ -20,15 +20,15 @@ if (!isset($_SESSION['user'])) {
 <body>
     <header>
         <div class="section">
-            <a href="man.php" class="nav-options">Men</a>
-            <a href="women.php" class="nav-options">Women</a>
-            <a href="kids.php" class="nav-options">Kids</a>
+            <a href="shop.php?cat=M" class="nav-options">Men</a>
+            <a href="shop.php?cat=F" class="nav-options">Women</a>
+            <a href="shop.php?cat=K" class="nav-options">Kids</a>
         </div>
         <h1><a href="index.php">ⵜⴰⵎⵓⵙⵏⵉ</a></h1>
         <nav>
             <a class="nav-options fa-solid fa-bag-shopping" href="cart.php"></a>
             <a class="nav-options fa-solid fa-heart" href="wishlist.php"></a>
-            <a class="nav-options fa-solid fa-user active" href="profile.php"></a>
+            <a class="nav-options" href="logout.php">Logout</a>
         </nav>
     </header>
     
