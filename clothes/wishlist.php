@@ -35,19 +35,4 @@ include_once "shop-form.php";
             ?>
         </nav>
     </header>
-    <div class="shop-grid">
-        <?php
-            for ($i = 0; $i < $resultCheck; $i++){
-                echo '<div class="product-card">
-                        <a href="item.php?id='.$products[$i]['id'].'">
-                            <img class="product-image" src="'.$products[$i]['img_url'].'" alt="Product Image">
-                            <h3 class="product-name">'.$products[$i]['name'].'</h3>
-                            <p class="product-details">'.$products[$i]['description'].'</p>
-                            <p class="product-price">$'.$products[$i]['price'].'</p>
-                        </a>
-                      </div>';
-            }
-            ?>
-    </div>
-</body>
-</html>
+    

@@ -35,19 +35,16 @@ include_once "shop-form.php";
             ?>
         </nav>
     </header>
-    <div class="shop-grid">
-        <?php
-            for ($i = 0; $i < $resultCheck; $i++){
-                echo '<div class="product-card">
-                        <a href="item.php?id='.$products[$i]['id'].'">
-                            <img class="product-image" src="'.$products[$i]['img_url'].'" alt="Product Image">
-                            <h3 class="product-name">'.$products[$i]['name'].'</h3>
-                            <p class="product-details">'.$products[$i]['description'].'</p>
-                            <p class="product-price">$'.$products[$i]['price'].'</p>
-                        </a>
-                      </div>';
-            }
-            ?>
+    <div class="item-container">
+        <div class="item-image-section">
+            <img class="item-image" src="<?php echo $item['img_url']; ?>" alt="Item Image">
+        </div>
+        <div class="item-details-section">
+            <h2 class="item-name"><?php echo $item['name']; ?></h2>
+            <p class="item-description"><?php echo $item['description']; ?></p>
+            <p class="item-price">$<?php echo $item['price']; ?></p>
+            <button class="add-to-cart-button" data-product-id="<?php echo $item['id']; ?>">Add to Cart</button>
+            <button class="add-to-likes-button" data-product-id="<?php echo $item['id']; ?>">Add to Wishlist</button>
+        </div>
     </div>
 </body>
-</html>

@@ -36,21 +36,21 @@
     <main>
         <h2>Pick your style</h2>
         <div class="suggested-categories-grid">
-            <a class="suggested-link" href="#">
+            <a class="suggested-link" href="shop.php?cat=M">
                 <div class="suggested-image suggested-image-man">
                     <div class="suggested-border">
                         <div class="suggested-text">Man</div>
                     </div>
                 </div>
             </a>
-            <a class="suggested-link" href="#">
+            <a class="suggested-link" href="shop.php?cat=F">
                 <div class="suggested-image suggested-image-woman">
                     <div class="suggested-border">
                         <div class="suggested-text">Woman</div>
                     </div>
                 </div>
             </a>
-            <a class="suggested-link" href="#">
+            <a class="suggested-link" href="shop.php?cat=K">
                 <div class="suggested-image suggested-image-kids">
                     <div class="suggested-border">
                         <div class="suggested-text">Kids</div>
