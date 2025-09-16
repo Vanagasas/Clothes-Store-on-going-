@@ -17,7 +17,6 @@ CREATE TABLE clothes (
     stock INT DEFAULT 0,
     category VARCHAR(10) NOT NULL,
     img_url VARCHAR(255)
-    
 );
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -46,7 +45,6 @@ CREATE TABLE cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     clothes_id INT NOT NULL,
-    quantity INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (clothes_id) REFERENCES clothes(id)
 );

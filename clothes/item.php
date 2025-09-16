@@ -39,12 +39,12 @@ include_once "shop-form.php";
         <div class="item-image-section">
             <img class="item-image" src="<?php echo $item['img_url']; ?>" alt="Item Image">
         </div>
-        <div class="item-details-section">
+        <form class="item-details-section" method="POST">
             <h2 class="item-name"><?php echo $item['name']; ?></h2>
             <p class="item-description"><?php echo $item['description']; ?></p>
             <p class="item-price">$<?php echo $item['price']; ?></p>
-            <button class="add-to-cart-button" data-product-id="<?php echo $item['id']; ?>">Add to Cart</button>
-            <button class="add-to-likes-button" data-product-id="<?php echo $item['id']; ?>">Add to Wishlist</button>
-        </div>
+            <button type="submit" name="action" value="cart" class="add-to-cart-button" data-product-id="<?php echo $item['id']; ?>">Add to Cart</button>
+            <button type="submit" name="action" value="wishlist" class="add-to-likes-button" data-product-id="<?php echo $item['id']; ?>">Add to Wishlist</button>
+        </form>
     </div>
 </body>

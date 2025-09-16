@@ -1,7 +1,11 @@
 <?php
 session_start();
 include_once "database.php";
-include_once "shop-form.php";
+include_once "wishlist-form.php";
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,4 +39,18 @@ include_once "shop-form.php";
             ?>
         </nav>
     </header>
-    
+    <div class="shop-grid">
+        <?php
+            for ($i = 0; $i < $wishlistCount; $i++){
+                echo '<div class="product-card">
+                        <a href="item.php?id='.$wishlist[$i]['id'].'">
+                            <img class="product-image" src="'.$wishlist[$i]['img_url'].'" alt="Product Image">
+                            <h3 class="product-name">'.$wishlist[$i]['name'].'</h3>
+                            <p class="product-details">'.$wishlist[$i]['description'].'</p>
+                            <p class="product-price">$'.$wishlist[$i]['price'].'</p>
+                        </a>
+                      </div>';
+            }
+            ?>
+    </div>
+
