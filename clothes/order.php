@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once "database.php";
-include_once "profile-form.php";
+include_once "order-form.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,27 +26,20 @@ include_once "profile-form.php";
         <nav>
             <a class="nav-options fa-solid fa-bag-shopping" href="cart.php"></a>
             <a class="nav-options fa-solid fa-heart" href="wishlist.php"></a>
-            <a class="nav-options" href="logout.php">Logout</a>
+            <a class="nav-options fa-solid fa-user" href="profile.php"></a>
         </nav>
     </header>
-    <div class="orders-section">
-        <h2>Your Orders</h2>
+    <div class="items-section">
         <?php
-        if ($resultCheck > 0) {
-            for ($i = 0; $i < $resultCheck; $i++){
-                echo '<div class="order-card">
-                        <a href="order.php?order_id='.$orders[$i]['id'].'">
-                            <h3>Order #'.$orders[$i]['id'].'</h3>
-                            <p>Order Date: '.$orders[$i]['order_date'].'</p>
-                            <p>Total: $'.$orders[$i]['total'].'</p>
-                            <p>Status: '.$orders[$i]['status'].'</p>
-                        </a>
-                      </div>';
-            }
-        } else {
-            echo '<p>You have no orders.</p>';
+        for ($i = 0; $i < 2; $i++){
+            echo '<div class="order-item-card">
+                    <img class="order-item-image" src="'.$items[$i]['img_url'].'" alt="Item Image">
+                    <div class="order-item-details">
+                        <h3 class="order-item-name">'.$items[$i]['name'].'</h3>
+                        <p class="order-item-description">'.$items[$i]['description'].'</p>
+                        <p class="order-item-price">$'.$items[$i]['price'].'</p>
+                    </div>
+                  </div>';
         }
         ?>
-    
-</body>
-</html>
+    </div>

@@ -271,3 +271,145 @@ footer{
 .add-to-likes-button:hover {
     background-color: #4cae4c;
 }
+
+/* Cart */
+
+.cart-container {
+    width: 80%;
+    margin: 2em auto;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1em 0;
+}
+.cart-item:last-child {
+    border-bottom: none;
+}
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 1em;
+}
+.cart-item-details {
+    flex: 1;
+}
+.cart-item-name {
+    font-size: 1.2em;
+    margin: 0 0 0.5em 0;
+}
+.cart-item-price {
+    font-size: 1.1em;
+    color: #0275d8;
+}
+.cart-item-quantity {
+    width: 60px;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 1em;
+}
+.remove-from-cart-button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #d9534f;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.remove-from-cart-button:hover {
+    background-color: #c9302c;
+}
+.checkout-button {
+    padding: 0.75em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1em;
+}
+.checkout-button:hover {
+    background-color: #4cae4c;
+}
+
+/* Profile */
+
+.orders-section {
+    margin-top: 2em;
+}
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+}
+.order-card:hover {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.order-card h3 {
+    margin-top: 0;
+}
+.order-card p {
+    margin: 0.5em 0;
+}
+.no-orders {
+    color: #555;
+    font-size: 1.1em;
+    margin-top: 2em;
+}
+
+/* Order Details */
+
+.order-item-card {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1em 0;
+}
+.order-item-card:last-child {
+    border-bottom: none;
+}
+.order-item-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 1em;
+}
+.order-item-details {
+    flex: 1;
+}
+.order-item-name {
+    font-size: 1.2em;
+    margin: 0 0 0.5em 0;
+}
+.order-item-price {
+    font-size: 1.1em;
+    color: #0275d8;
+}
+.order-summary {
+    text-align: right;
+    margin-top: 2em;
+}
+.order-summary h3 {
+    margin: 0 0 0.5em 0;
+}
+.order-summary p {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+}
+
+
