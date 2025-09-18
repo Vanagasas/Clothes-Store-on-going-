@@ -41,7 +41,7 @@ if (!isset($_SESSION['user'])) {
     </header>
     <div class="shop-grid">
         <?php
-            for ($i = 0; $i < $wishlistCount; $i++){
+            for ($i = 0; $i < count($wishlist); $i++){
                 echo '<div class="product-card">
                         <a href="item.php?id='.$wishlist[$i]['id'].'">
                             <img class="product-image" src="'.$wishlist[$i]['img_url'].'" alt="Product Image">

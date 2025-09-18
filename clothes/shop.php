@@ -1,7 +1,8 @@
 <?php
 session_start();
 include_once "database.php";
-include_once "shop-form.php";
+include_once "form.php";
+$products = getData($conn, "clothes", "category", $_GET['cat'], "s", "array")
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,7 @@ include_once "shop-form.php";
     </header>
     <div class="shop-grid">
         <?php
-            for ($i = 0; $i < $resultCheck; $i++){
+            for ($i = 0; $i < count($products); $i++){
                 echo '<div class="product-card">
                         <a href="item.php?id='.$products[$i]['id'].'">
                             <img class="product-image" src="'.$products[$i]['img_url'].'" alt="Product Image">

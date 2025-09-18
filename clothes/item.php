@@ -1,7 +1,9 @@
 <?php
 session_start();
 include_once "database.php";
-include_once "shop-form.php";
+include_once "form.php";
+include_once "item-form.php";
+$item = getData($conn, "clothes", "id", $_GET['id'], "i", "single");
 ?>
 <!DOCTYPE html>
 <html>

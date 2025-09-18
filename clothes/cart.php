@@ -37,8 +37,8 @@ include_once "cart-form.php";
     </header>
     <div class="cart-container">
         <?php
-        if ($resultCheck > 0){
-            for ($i = 0; $i < $resultCheck; $i++){
+        if (count($cart) > 0){
+            for ($i = 0; $i < count($cart); $i++){
                 echo '<form method="POST" class="cart-item">
                         <img class="cart-item-image" src="'.$cart[$i]['img_url'].'" alt="Cart Item Image">
                         <div class="cart-item-details">

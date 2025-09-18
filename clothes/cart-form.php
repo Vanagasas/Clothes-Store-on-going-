@@ -11,13 +11,6 @@ function getData($conn){
     }
     return $cart;
 }
-function numRows($conn){
-    $stmt = $conn->prepare("SELECT clothes.* FROM clothes JOIN cart ON clothes.id = cart.clothes_id WHERE cart.user_id = ?;");
-    $stmt->bind_param("i", $_SESSION['user_id']);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    return $result->num_rows;
-}
 function getTotal($conn){
     $stmt = $conn->prepare("SELECT SUM(clothes.price) AS total FROM clothes JOIN cart ON clothes.id = cart.clothes_id WHERE cart.user_id = ?;");
     $stmt->bind_param("i", $_SESSION['user_id']);
@@ -27,7 +20,6 @@ function getTotal($conn){
 }
 $cart = array();
 $cart = getData($conn);
-$resultCheck = numRows($conn);
 $total = getTotal($conn);
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");

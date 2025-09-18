@@ -8,21 +8,7 @@ if ($conn->connect_error) {
 function is_valid_email($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
-function getId($conn, $email) {
-    $stmt = $conn->prepare('SELECT id FROM users WHERE email = ?');
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $stmt->store_result();
-    if ($stmt->num_rows === 1) {
-        $id = '';
-        $stmt->bind_result($id);
-        $stmt->fetch();
-        return $id;
-    }
-    return null;
-}
 
-// Handle form submission
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
@@ -55,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bind_param('sssss', $email, $hashed, $_POST['adress'], $_POST['city'], $_POST['fullname']);
                 if ($stmt->execute()) {
                     $_SESSION['user'] = $email;
-                    $_SESSION['user_id'] = getId($conn, $email);
+                    $_SESSION['user_id'] = $stmt->insert_id;
                     header('Location: index.php');
                 } else {
                     $message = 'Sign up failed.';
@@ -64,16 +50,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->close();
         } elseif ($action === 'login') {
             // Check credentials
-            $stmt = $conn->prepare('SELECT password FROM users WHERE email = ?');
+            $stmt = $conn->prepare('SELECT id, password FROM users WHERE email = ?');
             $stmt->bind_param('s', $email);
             $stmt->execute();
             $stmt->store_result();
             if ($stmt->num_rows === 1) {
-                $stmt->bind_result($hashed);
+                $stmt->bind_result($id, $hashed);
                 $stmt->fetch();
                 if (password_verify($password, $hashed)) {
                     $_SESSION['user'] = $email;
-                    $_SESSION['user_id'] = getId($conn, $email);
+                    $_SESSION['user_id'] = $id;
                     header('Location: index.php');
                 } else {
                     $message = 'Incorrect password.';

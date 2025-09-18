@@ -1,7 +1,12 @@
 <?php
 session_start();
 include_once "database.php";
-include_once "profile-form.php";
+include_once "form.php";
+$orders = getData($conn, "orders", "user_id", $_SESSION["user_id"], "i", "array");
+if (!isset($_SESSION['user'])) {
+        header("Location: login.php");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,8 +37,8 @@ include_once "profile-form.php";
     <div class="orders-section">
         <h2>Your Orders</h2>
         <?php
-        if ($resultCheck > 0) {
-            for ($i = 0; $i < $resultCheck; $i++){
+        if (count($orders) > 0) {
+            for ($i = 0; $i < count($orders); $i++){
                 echo '<div class="order-card">
                         <a href="order.php?order_id='.$orders[$i]['id'].'">
                             <h3>Order #'.$orders[$i]['id'].'</h3>

@@ -11,13 +11,5 @@ function getWishlist($conn, $userId){
     }
     return $wishlist;
 }
-function numWishlistRows($conn, $userId){
-    $stmt = $conn->prepare("SELECT clothes.* FROM clothes JOIN wishlist ON clothes.id = wishlist.clothes_id WHERE wishlist.user_id = ?");
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    return $result->num_rows;
-}
 $wishlist = array();
 $wishlist = getWishlist($conn, $_SESSION['user_id']);
-$wishlistCount = numWishlistRows($conn, $_SESSION['user_id']);
